@@ -1,3 +1,4 @@
+import 'package:expense_tracker/screens/add_expense_screen.dart';
 import 'package:expense_tracker/util/en_strings.dart';
 import 'package:flutter/material.dart';
 
@@ -36,17 +37,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  void _addExpense() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AddExpenseScreen()),
+    );
   }
 
   @override
@@ -86,16 +81,12 @@ class _HomeState extends State<Home> {
             Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
+        onPressed: _addExpense,
+        tooltip: 'Add expense',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
