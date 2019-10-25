@@ -1,0 +1,1 @@
+const String EN_TITLE = 'Expense Manager';
